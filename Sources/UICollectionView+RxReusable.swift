@@ -31,10 +31,10 @@ extension UICollectionView: RxReusableCell {
     )
   }
 
-  func _rxreusable_init(frame: CGRect, collectionViewLayout: UICollectionViewLayout) -> UICollectionView {
+  class func _rxreusable_init(frame: CGRect, collectionViewLayout: UICollectionViewLayout) -> UICollectionView {
     let instance = self._rxreusable_init(frame: frame, collectionViewLayout: collectionViewLayout)
-    _ = self.rx.didEndDisplayingCell
-      .takeUntil(self.rx.deallocated)
+    _ = instance.rx.didEndDisplayingCell
+      .takeUntil(instance.rx.deallocated)
       .subscribe(onNext: { cell, indexPath in
         cell.rx.didEndDisplayingSubject.onNext(indexPath)
       })

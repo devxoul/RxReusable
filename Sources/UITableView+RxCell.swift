@@ -21,10 +21,10 @@ extension UITableView {
     )
   }
 
-  func _rxreusable_init(frame: CGRect, style: UITableViewStyle) -> UITableView {
+  class func _rxreusable_init(frame: CGRect, style: UITableViewStyle) -> UITableView {
     let instance = self._rxreusable_init(frame: frame, style: style)
-    _ = self.rx.didEndDisplayingCell
-      .takeUntil(self.rx.deallocated)
+    _ = instance.rx.didEndDisplayingCell
+      .takeUntil(instance.rx.deallocated)
       .subscribe(onNext: { cell, indexPath in
         cell.rx.didEndDisplayingSubject.onNext(indexPath)
       })
