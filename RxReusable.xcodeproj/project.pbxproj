@@ -13,8 +13,8 @@
 		0304683A1DEDC8DC00F61B90 /* RxReusableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030468321DEDC8DC00F61B90 /* RxReusableCell.swift */; };
 		0304683B1DEDC8DC00F61B90 /* UICollectionView+RxReusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030468331DEDC8DC00F61B90 /* UICollectionView+RxReusable.swift */; };
 		0304683C1DEDC8DC00F61B90 /* UICollectionViewCell+RxReusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030468341DEDC8DC00F61B90 /* UICollectionViewCell+RxReusable.swift */; };
-		0304683D1DEDC8DC00F61B90 /* UITableView+RxCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030468351DEDC8DC00F61B90 /* UITableView+RxCell.swift */; };
-		0304683E1DEDC8DC00F61B90 /* UITableViewCell+RxCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030468361DEDC8DC00F61B90 /* UITableViewCell+RxCell.swift */; };
+		0304683D1DEDC8DC00F61B90 /* UITableView+RxReusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030468351DEDC8DC00F61B90 /* UITableView+RxReusable.swift */; };
+		0304683E1DEDC8DC00F61B90 /* UITableViewCell+RxReusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030468361DEDC8DC00F61B90 /* UITableViewCell+RxReusable.swift */; };
 		030468421DEDCB7D00F61B90 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 030468401DEDCB7D00F61B90 /* RxCocoa.framework */; };
 		030468431DEDCB7D00F61B90 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 030468411DEDCB7D00F61B90 /* RxSwift.framework */; };
 /* End PBXBuildFile section */
@@ -28,8 +28,8 @@
 		030468321DEDC8DC00F61B90 /* RxReusableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxReusableCell.swift; sourceTree = "<group>"; };
 		030468331DEDC8DC00F61B90 /* UICollectionView+RxReusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+RxReusable.swift"; sourceTree = "<group>"; };
 		030468341DEDC8DC00F61B90 /* UICollectionViewCell+RxReusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCell+RxReusable.swift"; sourceTree = "<group>"; };
-		030468351DEDC8DC00F61B90 /* UITableView+RxCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+RxCell.swift"; sourceTree = "<group>"; };
-		030468361DEDC8DC00F61B90 /* UITableViewCell+RxCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+RxCell.swift"; sourceTree = "<group>"; };
+		030468351DEDC8DC00F61B90 /* UITableView+RxReusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+RxReusable.swift"; sourceTree = "<group>"; };
+		030468361DEDC8DC00F61B90 /* UITableViewCell+RxReusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+RxReusable.swift"; sourceTree = "<group>"; };
 		030468401DEDCB7D00F61B90 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
 		030468411DEDCB7D00F61B90 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -73,9 +73,9 @@
 				030468321DEDC8DC00F61B90 /* RxReusableCell.swift */,
 				030468301DEDC8DC00F61B90 /* NSObject+RxReusable.swift */,
 				030468331DEDC8DC00F61B90 /* UICollectionView+RxReusable.swift */,
+				030468351DEDC8DC00F61B90 /* UITableView+RxReusable.swift */,
 				030468341DEDC8DC00F61B90 /* UICollectionViewCell+RxReusable.swift */,
-				030468351DEDC8DC00F61B90 /* UITableView+RxCell.swift */,
-				030468361DEDC8DC00F61B90 /* UITableViewCell+RxCell.swift */,
+				030468361DEDC8DC00F61B90 /* UITableViewCell+RxReusable.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -177,11 +177,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0304683D1DEDC8DC00F61B90 /* UITableView+RxCell.swift in Sources */,
+				0304683D1DEDC8DC00F61B90 /* UITableView+RxReusable.swift in Sources */,
 				0304683A1DEDC8DC00F61B90 /* RxReusableCell.swift in Sources */,
 				030468381DEDC8DC00F61B90 /* NSObject+RxReusable.swift in Sources */,
 				0304683B1DEDC8DC00F61B90 /* UICollectionView+RxReusable.swift in Sources */,
-				0304683E1DEDC8DC00F61B90 /* UITableViewCell+RxCell.swift in Sources */,
+				0304683E1DEDC8DC00F61B90 /* UITableViewCell+RxReusable.swift in Sources */,
 				030468391DEDC8DC00F61B90 /* RxReusableType.swift in Sources */,
 				0304683C1DEDC8DC00F61B90 /* UICollectionViewCell+RxReusable.swift in Sources */,
 			);
