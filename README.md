@@ -30,7 +30,6 @@ RxReusable provides some APIs for managing life cycle of reusable cells and view
     `UITableViewCell` and `UICollectionView` now has their own `disposeBag` as a property. The dispose bag is automatically disposed on `prepareForReuse()`.
 
     ```swift
-    let cell: UITableViewCell = ...
     observable
       .subscribe()
       .addDisposableTo(cell.disposeBag)
@@ -40,12 +39,18 @@ RxReusable provides some APIs for managing life cycle of reusable cells and view
 
     The reactive wrapper for the cell or view is currently displaying or not. This will emit `true` when the `tableView(_:willDisplay:forRowAt:)` or `collectionView(_:willDisplay:forItemAt:)` is executed and `false` when the `tableView(_:didEndDisplaying:forRowAt:)` or `collectionView(_:didEndDisplaying:forItemAt:)` is executed.
 
+    ```swift
+    cell.rx.isDisplaying
+      .subscribe(onNext: { isDisplaying in
+        print("Cell became \(isDisplaying ? "visible" : "invisible")")
+      })
+    ```
+
 * **`func whileDisplaying(_:_:)`**
 
     This operator makes the observable emit items only when the cell or view is currently displaying or not.
 
     ```swift
-    let cell: UITableViewCell = ...
     observable.whileDisplaying(cell, true)  // emit items when the cell is visible
     observable.whileDisplaying(cell, false) // emit items when the cell is not visible
     ```
