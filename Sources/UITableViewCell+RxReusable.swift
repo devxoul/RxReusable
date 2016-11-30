@@ -12,7 +12,7 @@ import RxCocoa
 import RxSwift
 
 #if os(iOS)
-extension UITableViewCell: RxReusableCell {
+extension UITableViewCell: RxReusableType {
 
   open override static func initialize() {
     guard self === UITableViewCell.self else { return }

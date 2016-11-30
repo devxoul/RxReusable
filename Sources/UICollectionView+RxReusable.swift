@@ -21,7 +21,7 @@ public typealias CollectionViewDidEndDisplayingCellEvent = (
   indexPath: IndexPath
 )
 
-extension UICollectionView: RxReusableCell {
+extension UICollectionView {
 
   open override static func initialize() {
     guard self === UICollectionView.self else { return }
@@ -31,8 +31,13 @@ extension UICollectionView: RxReusableCell {
     )
   }
 
-  class func _rxreusable_init(frame: CGRect, collectionViewLayout: UICollectionViewLayout) -> UICollectionView {
+  func _rxreusable_init(frame: CGRect, collectionViewLayout: UICollectionViewLayout) -> UICollectionView {
     let instance = self._rxreusable_init(frame: frame, collectionViewLayout: collectionViewLayout)
+    _ = instance.rx.willDisplayCell
+      .takeUntil(instance.rx.deallocated)
+      .subscribe(onNext: { cell, indexPath in
+        cell.rx.willDisplaySubject.onNext(indexPath)
+      })
     _ = instance.rx.didEndDisplayingCell
       .takeUntil(instance.rx.deallocated)
       .subscribe(onNext: { cell, indexPath in
