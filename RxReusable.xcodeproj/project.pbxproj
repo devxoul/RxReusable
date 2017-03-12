@@ -24,11 +24,21 @@
 		0365BBD11E75A73D009BA3F8 /* UICollectionViewCell+RxReusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0365BBC61E75A73D009BA3F8 /* UICollectionViewCell+RxReusable.swift */; };
 		0365BBD21E75A73D009BA3F8 /* UITableView+RxReusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0365BBC71E75A73D009BA3F8 /* UITableView+RxReusable.swift */; };
 		0365BBD31E75A73D009BA3F8 /* UITableViewCell+RxReusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0365BBC81E75A73D009BA3F8 /* UITableViewCell+RxReusable.swift */; };
+		0365BBDE1E75A7CD009BA3F8 /* RxReusable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0304681E1DED82E000F61B90 /* RxReusable.framework */; };
+		0365BBE81E75A7EB009BA3F8 /* RxReusableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0365BBE61E75A7E2009BA3F8 /* RxReusableTests.swift */; };
 		994FF7BDB3BE4E72A7C8009B /* Pods_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CBD27869BEB94E35BC32C04 /* Pods_Example.framework */; };
+		B3103360D76E3CEBF1BBCEDD /* Pods_RxReusable_iOS_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F005CC78FFCA3FA4C336CAA /* Pods_RxReusable_iOS_Tests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		0352CE6E1DEEC38400066B0B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 030468151DED82E000F61B90 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0304681D1DED82E000F61B90;
+			remoteInfo = "RxReusable-iOS";
+		};
+		0365BBDF1E75A7CD009BA3F8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 030468151DED82E000F61B90 /* Project object */;
 			proxyType = 1;
@@ -58,9 +68,16 @@
 		0365BBC71E75A73D009BA3F8 /* UITableView+RxReusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+RxReusable.swift"; sourceTree = "<group>"; };
 		0365BBC81E75A73D009BA3F8 /* UITableViewCell+RxReusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+RxReusable.swift"; sourceTree = "<group>"; };
 		0365BBCA1E75A73D009BA3F8 /* Info-iOS.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-iOS.plist"; sourceTree = "<group>"; };
+		0365BBD91E75A7CD009BA3F8 /* RxReusable-iOS-Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "RxReusable-iOS-Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0365BBE61E75A7E2009BA3F8 /* RxReusableTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxReusableTests.swift; sourceTree = "<group>"; };
+		0367B9811E75A9C9001CC867 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = "../../Library/Developer/Xcode/DerivedData/RxReusable-fpbrycsvvobsapewpfbpwefwntfh/Build/Products/Debug-iphonesimulator/RxCocoa/RxCocoa.framework"; sourceTree = "<group>"; };
+		0367B9821E75A9C9001CC867 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = "../../Library/Developer/Xcode/DerivedData/RxReusable-fpbrycsvvobsapewpfbpwefwntfh/Build/Products/Debug-iphonesimulator/RxSwift/RxSwift.framework"; sourceTree = "<group>"; };
 		0519B97FD96804F9DB2EF98E /* Pods-Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-Example/Pods-Example.release.xcconfig"; sourceTree = "<group>"; };
+		266075A6A7F280C4E1DEC5A3 /* Pods-RxReusable-iOS-Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxReusable-iOS-Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxReusable-iOS-Tests/Pods-RxReusable-iOS-Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		8CBD27869BEB94E35BC32C04 /* Pods_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8F005CC78FFCA3FA4C336CAA /* Pods_RxReusable_iOS_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxReusable_iOS_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AEEAAB7BFA8BFED8E19F696 /* Pods-Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Example/Pods-Example.debug.xcconfig"; sourceTree = "<group>"; };
+		CBDCDAA6FDA920EAB19A8F52 /* Pods-RxReusable-iOS-Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxReusable-iOS-Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RxReusable-iOS-Tests/Pods-RxReusable-iOS-Tests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +99,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		0365BBD61E75A7CD009BA3F8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0365BBDE1E75A7CD009BA3F8 /* RxReusable.framework in Frameworks */,
+				B3103360D76E3CEBF1BBCEDD /* Pods_RxReusable_iOS_Tests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -89,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				0352CE671DEEC28200066B0B /* RxReusable */,
+				0365BBE41E75A7E2009BA3F8 /* Tests */,
 				0352CE581DEEC27B00066B0B /* Example */,
 				0304681F1DED82E000F61B90 /* Products */,
 				0304683F1DEDCB7D00F61B90 /* Frameworks */,
@@ -101,6 +128,7 @@
 			children = (
 				0304681E1DED82E000F61B90 /* RxReusable.framework */,
 				0352CE461DEEC25200066B0B /* Example.app */,
+				0365BBD91E75A7CD009BA3F8 /* RxReusable-iOS-Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -108,9 +136,12 @@
 		0304683F1DEDCB7D00F61B90 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0367B9811E75A9C9001CC867 /* RxCocoa.framework */,
+				0367B9821E75A9C9001CC867 /* RxSwift.framework */,
 				030468401DEDCB7D00F61B90 /* RxCocoa.framework */,
 				030468411DEDCB7D00F61B90 /* RxSwift.framework */,
 				8CBD27869BEB94E35BC32C04 /* Pods_Example.framework */,
+				8F005CC78FFCA3FA4C336CAA /* Pods_RxReusable_iOS_Tests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -181,11 +212,11 @@
 		0365BBBF1E75A73D009BA3F8 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				0365BBC01E75A73D009BA3F8 /* Driver+RxReusable.swift */,
-				0365BBC11E75A73D009BA3F8 /* NSObject+RxReusable.swift */,
-				0365BBC21E75A73D009BA3F8 /* Observable+RxReusable.swift */,
 				0365BBC31E75A73D009BA3F8 /* RxReusable.h */,
 				0365BBC41E75A73D009BA3F8 /* RxReusableType.swift */,
+				0365BBC11E75A73D009BA3F8 /* NSObject+RxReusable.swift */,
+				0365BBC21E75A73D009BA3F8 /* Observable+RxReusable.swift */,
+				0365BBC01E75A73D009BA3F8 /* Driver+RxReusable.swift */,
 				0365BBC51E75A73D009BA3F8 /* UICollectionView+RxReusable.swift */,
 				0365BBC61E75A73D009BA3F8 /* UICollectionViewCell+RxReusable.swift */,
 				0365BBC71E75A73D009BA3F8 /* UITableView+RxReusable.swift */,
@@ -204,11 +235,29 @@
 			path = "RxReusable/Supporting Files";
 			sourceTree = SOURCE_ROOT;
 		};
+		0365BBE41E75A7E2009BA3F8 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				0365BBE51E75A7E2009BA3F8 /* Sources */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		0365BBE51E75A7E2009BA3F8 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				0365BBE61E75A7E2009BA3F8 /* RxReusableTests.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
 		1AD45FB38B7D6D8548361591 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
 				9AEEAAB7BFA8BFED8E19F696 /* Pods-Example.debug.xcconfig */,
 				0519B97FD96804F9DB2EF98E /* Pods-Example.release.xcconfig */,
+				266075A6A7F280C4E1DEC5A3 /* Pods-RxReusable-iOS-Tests.debug.xcconfig */,
+				CBDCDAA6FDA920EAB19A8F52 /* Pods-RxReusable-iOS-Tests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -266,13 +315,34 @@
 			productReference = 0352CE461DEEC25200066B0B /* Example.app */;
 			productType = "com.apple.product-type.application";
 		};
+		0365BBD81E75A7CD009BA3F8 /* RxReusable-iOS-Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0365BBE11E75A7CD009BA3F8 /* Build configuration list for PBXNativeTarget "RxReusable-iOS-Tests" */;
+			buildPhases = (
+				F0AC0E592C7337AF237559FE /* [CP] Check Pods Manifest.lock */,
+				0365BBD51E75A7CD009BA3F8 /* Sources */,
+				0365BBD61E75A7CD009BA3F8 /* Frameworks */,
+				0365BBD71E75A7CD009BA3F8 /* Resources */,
+				6D645591D38F23BCE929F3B6 /* [CP] Embed Pods Frameworks */,
+				D376CF70554165FC2BA2C348 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0365BBE01E75A7CD009BA3F8 /* PBXTargetDependency */,
+			);
+			name = "RxReusable-iOS-Tests";
+			productName = "RxReusable-iOS-Tests";
+			productReference = 0365BBD91E75A7CD009BA3F8 /* RxReusable-iOS-Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		030468151DED82E000F61B90 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0810;
+				LastSwiftUpdateCheck = 0820;
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Suyeol Jeon";
 				TargetAttributes = {
@@ -284,6 +354,10 @@
 					0352CE451DEEC25200066B0B = {
 						CreatedOnToolsVersion = 8.1;
 						ProvisioningStyle = Automatic;
+					};
+					0365BBD81E75A7CD009BA3F8 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -301,6 +375,7 @@
 			projectRoot = "";
 			targets = (
 				0304681D1DED82E000F61B90 /* RxReusable-iOS */,
+				0365BBD81E75A7CD009BA3F8 /* RxReusable-iOS-Tests */,
 				0352CE451DEEC25200066B0B /* Example */,
 			);
 		};
@@ -320,6 +395,13 @@
 			files = (
 				0352CE701DEEC3B000066B0B /* Assets.xcassets in Resources */,
 				0352CE711DEEC3B100066B0B /* LaunchScreen.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0365BBD71E75A7CD009BA3F8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,6 +438,36 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		6D645591D38F23BCE929F3B6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RxReusable-iOS-Tests/Pods-RxReusable-iOS-Tests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D376CF70554165FC2BA2C348 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RxReusable-iOS-Tests/Pods-RxReusable-iOS-Tests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		EE092348D43843CC7D0E69D5 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -369,6 +481,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Example/Pods-Example-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F0AC0E592C7337AF237559FE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -399,6 +526,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		0365BBD51E75A7CD009BA3F8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0365BBE81E75A7EB009BA3F8 /* RxReusableTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -406,6 +541,11 @@
 			isa = PBXTargetDependency;
 			target = 0304681D1DED82E000F61B90 /* RxReusable-iOS */;
 			targetProxy = 0352CE6E1DEEC38400066B0B /* PBXContainerItemProxy */;
+		};
+		0365BBE01E75A7CD009BA3F8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0304681D1DED82E000F61B90 /* RxReusable-iOS */;
+			targetProxy = 0365BBDF1E75A7CD009BA3F8 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -599,6 +739,44 @@
 			};
 			name = Release;
 		};
+		0365BBE21E75A7CD009BA3F8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 266075A6A7F280C4E1DEC5A3 /* Pods-RxReusable-iOS-Tests.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/RxReusable/Supporting Files/Info-iOS.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "kr.xoul.RxReusable-iOS-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		0365BBE31E75A7CD009BA3F8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CBDCDAA6FDA920EAB19A8F52 /* Pods-RxReusable-iOS-Tests.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/RxReusable/Supporting Files/Info-iOS.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "kr.xoul.RxReusable-iOS-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -625,6 +803,15 @@
 			buildConfigurations = (
 				0352CE561DEEC25200066B0B /* Debug */,
 				0352CE571DEEC25200066B0B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0365BBE11E75A7CD009BA3F8 /* Build configuration list for PBXNativeTarget "RxReusable-iOS-Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0365BBE21E75A7CD009BA3F8 /* Debug */,
+				0365BBE31E75A7CD009BA3F8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

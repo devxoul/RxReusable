@@ -8,3 +8,9 @@ target 'Example' do
   pod 'RxSwift'
   pod 'RxCocoa'
 end
+
+target 'RxReusable-iOS-Tests' do
+  use_frameworks!
+
+  pod 'RxReusable', :path => './'
+end
