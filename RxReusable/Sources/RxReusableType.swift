@@ -15,6 +15,8 @@ private var didEndDisplayingSubjectKey = "didEndDisplayingSubject"
 
 public protocol RxReusableType: class {
   var disposeBag: DisposeBag { get }
+  func dispose()
+  func dispose(propagate: Bool)
 }
 
 extension RxReusableType where Self: UIView {
@@ -37,9 +39,26 @@ extension RxReusableType where Self: UIView {
     self.dispose()
   }
 
-  /// Dispose the dispose bag manually.
   public func dispose() {
-    self._disposeBag = nil
+    self.dispose(propagate: true)
+  }
+
+  /// Dispose the dispose bag manually.
+  public func dispose(propagate: Bool) {
+    if !propagate {
+      self._disposeBag = nil
+      return
+    }
+
+    func traverseSubviews(from view: UIView, closure: (UIView) -> Void) {
+      for subview in view.subviews {
+        traverseSubviews(from: subview, closure: closure)
+      }
+      closure(view)
+    }
+    traverseSubviews(from: self) { view in
+      (view as? RxReusableType)?.dispose(propagate: false)
+    }
   }
 }
 
