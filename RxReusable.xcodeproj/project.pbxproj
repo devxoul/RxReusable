@@ -25,6 +25,7 @@
 		0365BBDE1E75A7CD009BA3F8 /* RxReusable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0304681E1DED82E000F61B90 /* RxReusable.framework */; };
 		0365BBE81E75A7EB009BA3F8 /* DisposeBagTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0365BBE61E75A7E2009BA3F8 /* DisposeBagTests.swift */; };
 		0367B9891E75BBE3001CC867 /* DisplayingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0367B9871E75B0A3001CC867 /* DisplayingTests.swift */; };
+		0367B98B1E75CE90001CC867 /* UIView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0367B98A1E75CE90001CC867 /* UIView+Utils.swift */; };
 		63E04338FD3100A8805A6EB5 /* Pods_RxReusable_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5F04DD57CD4FFB12C6F99BB /* Pods_RxReusable_iOS.framework */; };
 		994FF7BDB3BE4E72A7C8009B /* Pods_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CBD27869BEB94E35BC32C04 /* Pods_Example.framework */; };
 		AD4DC8E63D5D4F9F44C7688A /* Pods_RxReusable_iOS_RxReusable_iOS_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AAB8E6B2B82ECF523290E14 /* Pods_RxReusable_iOS_RxReusable_iOS_Tests.framework */; };
@@ -76,6 +77,7 @@
 		0367B9811E75A9C9001CC867 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = "../../Library/Developer/Xcode/DerivedData/RxReusable-fpbrycsvvobsapewpfbpwefwntfh/Build/Products/Debug-iphonesimulator/RxCocoa/RxCocoa.framework"; sourceTree = "<group>"; };
 		0367B9821E75A9C9001CC867 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = "../../Library/Developer/Xcode/DerivedData/RxReusable-fpbrycsvvobsapewpfbpwefwntfh/Build/Products/Debug-iphonesimulator/RxSwift/RxSwift.framework"; sourceTree = "<group>"; };
 		0367B9871E75B0A3001CC867 /* DisplayingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayingTests.swift; sourceTree = "<group>"; };
+		0367B98A1E75CE90001CC867 /* UIView+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Utils.swift"; sourceTree = "<group>"; };
 		0519B97FD96804F9DB2EF98E /* Pods-Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-Example/Pods-Example.release.xcconfig"; sourceTree = "<group>"; };
 		266075A6A7F280C4E1DEC5A3 /* Pods-RxReusable-iOS-Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxReusable-iOS-Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxReusable-iOS-Tests/Pods-RxReusable-iOS-Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		2855AAC9127054C0EDE97728 /* Pods_RxReusable_iOS_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxReusable_iOS_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -237,6 +239,7 @@
 				0365BBC61E75A73D009BA3F8 /* UICollectionViewCell+RxReusable.swift */,
 				0365BBC71E75A73D009BA3F8 /* UITableView+RxReusable.swift */,
 				0365BBC81E75A73D009BA3F8 /* UITableViewCell+RxReusable.swift */,
+				0367B98A1E75CE90001CC867 /* UIView+Utils.swift */,
 			);
 			name = Sources;
 			path = RxReusable/Sources;
@@ -567,6 +570,7 @@
 				0365BBD01E75A73D009BA3F8 /* UICollectionView+RxReusable.swift in Sources */,
 				0365BBCF1E75A73D009BA3F8 /* RxReusableType.swift in Sources */,
 				0365BBCD1E75A73D009BA3F8 /* Observable+RxReusable.swift in Sources */,
+				0367B98B1E75CE90001CC867 /* UIView+Utils.swift in Sources */,
 				0365BBD11E75A73D009BA3F8 /* UICollectionViewCell+RxReusable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

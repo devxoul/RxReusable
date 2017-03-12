@@ -49,14 +49,7 @@ extension RxReusableType where Self: UIView {
       self._disposeBag = nil
       return
     }
-
-    func traverseSubviews(from view: UIView, closure: (UIView) -> Void) {
-      for subview in view.subviews {
-        traverseSubviews(from: subview, closure: closure)
-      }
-      closure(view)
-    }
-    traverseSubviews(from: self) { view in
+    self.traverseSubviews { view in
       (view as? RxReusableType)?.dispose(propagate: false)
     }
   }

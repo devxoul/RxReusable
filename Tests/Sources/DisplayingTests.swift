@@ -49,7 +49,7 @@ final class DisplayingTests: XCTestCase {
     super.tearDown()
   }
 
-  func testCollectionView_isDisplaying() {
+  func testIsDisplaying_collectionViewCell() {
     RxExpect { test in
       self.invokeCollectionViewWillDisplay(test, 100)
       self.invokeCollectionViewDidEndDisplaying(test, 200)
@@ -60,7 +60,20 @@ final class DisplayingTests: XCTestCase {
     }
   }
 
-  func testCollectionView_whileDisplaying() {
+  func testIsDisplaying_collectionViewCell_subcell() {
+    RxExpect { test in
+      let subcell = UICollectionViewCell(frame: .zero)
+      self.collectionViewCell.addSubview(subcell)
+      self.invokeCollectionViewWillDisplay(test, 100)
+      self.invokeCollectionViewDidEndDisplaying(test, 200)
+      test
+        .assert(subcell.rx.isDisplaying.asObservable())
+        .filterNext()
+        .equal([false, true, false])
+    }
+  }
+
+  func testWhileDisplaying_collectionViewCell() {
     RxExpect { test in
       let subject = PublishSubject<String>()
       let source = subject.whileDisplaying(self.collectionViewCell)
@@ -81,7 +94,33 @@ final class DisplayingTests: XCTestCase {
     }
   }
 
-  func testTableView_isDisplaying() {
+  func testWhileDisplaying_collectionViewCell_subcell() {
+    RxExpect { test in
+      let subcell = UICollectionViewCell(frame: .zero)
+      self.collectionViewCell.addSubview(subcell)
+      let subject = PublishSubject<String>()
+      let source = subject.whileDisplaying(subcell)
+      test.input(subject, [
+        next(100, "A"),
+        next(200, "B"),
+        next(300, "C"),
+        next(400, "D"),
+        next(500, "E"),
+        next(600, "F"),
+      ])
+      self.invokeCollectionViewWillDisplay(test, 250)
+      self.invokeCollectionViewDidEndDisplaying(test, 450)
+      test
+        .assert(source)
+        .filterNext()
+        .equal(["C", "D"])
+    }
+  }
+
+
+  // MARK: TableView
+
+  func testIsDisplaying_tableViewCell() {
     RxExpect { test in
       self.invokeTableViewWillDisplay(test, 100)
       self.invokeTableViewDidEndDisplaying(test, 200)
@@ -92,10 +131,46 @@ final class DisplayingTests: XCTestCase {
     }
   }
 
-  func testTableView_whileDisplaying() {
+  func testIsDisplaying_tableViewCell_subcell() {
+    let subcell = UITableViewCell()
+    self.tableViewCell.addSubview(subcell)
+    RxExpect { test in
+      self.invokeTableViewWillDisplay(test, 100)
+      self.invokeTableViewDidEndDisplaying(test, 200)
+      test
+        .assert(subcell.rx.isDisplaying.asObservable())
+        .filterNext()
+        .equal([false, true, false])
+    }
+  }
+
+  func testWhileDisplaying_tableViewCell() {
     RxExpect { test in
       let subject = PublishSubject<String>()
       let source = subject.whileDisplaying(self.tableViewCell)
+      test.input(subject, [
+        next(100, "A"),
+        next(200, "B"),
+        next(300, "C"),
+        next(400, "D"),
+        next(500, "E"),
+        next(600, "F"),
+      ])
+      self.invokeTableViewWillDisplay(test, 250)
+      self.invokeTableViewDidEndDisplaying(test, 450)
+      test
+        .assert(source)
+        .filterNext()
+        .equal(["C", "D"])
+    }
+  }
+
+  func testWhileDisplaying_tableViewCell_subcell() {
+    let subcell = UITableViewCell()
+    self.tableViewCell.addSubview(subcell)
+    RxExpect { test in
+      let subject = PublishSubject<String>()
+      let source = subject.whileDisplaying(subcell)
       test.input(subject, [
         next(100, "A"),
         next(200, "B"),

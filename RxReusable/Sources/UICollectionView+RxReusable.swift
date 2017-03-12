@@ -36,12 +36,16 @@ extension UICollectionView {
     _ = instance.rx.willDisplayCell
       .takeUntil(instance.rx.deallocated)
       .subscribe(onNext: { cell, indexPath in
-        cell.rx.willDisplaySubject.onNext(indexPath)
+        cell.traverseSubviews { view in
+          (view as? UICollectionViewCell)?.rx.willDisplaySubject.onNext(indexPath)
+        }
       })
     _ = instance.rx.didEndDisplayingCell
       .takeUntil(instance.rx.deallocated)
       .subscribe(onNext: { cell, indexPath in
-        cell.rx.didEndDisplayingSubject.onNext(indexPath)
+        cell.traverseSubviews { view in
+          (view as? UICollectionViewCell)?.rx.didEndDisplayingSubject.onNext(indexPath)
+        }
       })
     return instance
   }

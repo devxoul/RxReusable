@@ -26,12 +26,16 @@ extension UITableView {
     _ = instance.rx.willDisplayCell
       .takeUntil(instance.rx.deallocated)
       .subscribe(onNext: { cell, indexPath in
-        cell.rx.willDisplaySubject.onNext(indexPath)
+        cell.traverseSubviews { view in
+          (view as? UITableViewCell)?.rx.willDisplaySubject.onNext(indexPath)
+        }
       })
     _ = instance.rx.didEndDisplayingCell
       .takeUntil(instance.rx.deallocated)
       .subscribe(onNext: { cell, indexPath in
-        cell.rx.didEndDisplayingSubject.onNext(indexPath)
+        cell.traverseSubviews { view in
+          (view as? UITableViewCell)?.rx.didEndDisplayingSubject.onNext(indexPath)
+        }
       })
     return instance
   }
