@@ -33,6 +33,10 @@ extension RxReusableType where Self: UIView {
     return disposeBag
   }
 
+  public func prepareForReuse() {
+    self.dispose()
+  }
+
   /// Dispose the dispose bag manually.
   public func dispose() {
     self._disposeBag = nil
@@ -62,7 +66,9 @@ extension Reactive where Base: RxReusableType, Base: UIView {
   public var isDisplaying: ControlEvent<Bool> {
     let willDisplay = self.willDisplaySubject.asObservable().map { _ in true }
     let didEndDisplaying = self.didEndDisplayingSubject.asObservable().map { _ in false }
-    let source = Observable.of(willDisplay, didEndDisplaying).merge().distinctUntilChanged()
+    let source = Observable.of(willDisplay, didEndDisplaying).merge()
+      .distinctUntilChanged()
+      .startWith(false)
     return ControlEvent(events: source)
   }
 }

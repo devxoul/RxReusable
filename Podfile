@@ -1,16 +1,16 @@
 platform :ios, '9.0'
 
-target 'Example' do
+target 'RxReusable-iOS' do
   use_frameworks!
 
-  pod 'Then'
-  pod 'ReusableKit'
   pod 'RxSwift'
   pod 'RxCocoa'
-end
 
-target 'RxReusable-iOS-Tests' do
-  use_frameworks!
+  target 'Example' do
+    pod 'Then'
+  end
 
-  pod 'RxReusable', :path => './'
+  target 'RxReusable-iOS-Tests' do
+    pod 'RxExpect'
+  end
 end
