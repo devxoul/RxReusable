@@ -70,13 +70,13 @@ RxReusable provides some APIs for managing life cycle of reusable cells and view
 - **Using [CocoaPods](https://cocoapods.org)**:
 
     ```ruby
-    pod 'RxReusable', '~> 0.2'
+    pod 'RxReusable', '~> 0.3'
     ```
 
 - **Using [Carthage](https://github.com/Carthage/Carthage)**:
 
     ```
-    github "devxoul/RxReusable" ~> 0.2
+    github "devxoul/RxReusable" ~> 0.3
     ```
 
 ## License

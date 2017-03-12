@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'RxReusable'
-  s.version          = '0.2.0'
+  s.version          = '0.3.0'
   s.summary          = 'Reusable cells and views for RxSwift'
   s.homepage         = 'https://github.com/devxoul/RxReusable'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
