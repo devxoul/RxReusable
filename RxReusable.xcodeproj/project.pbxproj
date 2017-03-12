@@ -7,13 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0304682D1DEDC8C200F61B90 /* RxReusable.h in Headers */ = {isa = PBXBuildFile; fileRef = 0304682A1DEDC8C200F61B90 /* RxReusable.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		030468381DEDC8DC00F61B90 /* NSObject+RxReusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030468301DEDC8DC00F61B90 /* NSObject+RxReusable.swift */; };
-		030468391DEDC8DC00F61B90 /* RxReusableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030468311DEDC8DC00F61B90 /* RxReusableType.swift */; };
-		0304683B1DEDC8DC00F61B90 /* UICollectionView+RxReusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030468331DEDC8DC00F61B90 /* UICollectionView+RxReusable.swift */; };
-		0304683C1DEDC8DC00F61B90 /* UICollectionViewCell+RxReusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030468341DEDC8DC00F61B90 /* UICollectionViewCell+RxReusable.swift */; };
-		0304683D1DEDC8DC00F61B90 /* UITableView+RxReusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030468351DEDC8DC00F61B90 /* UITableView+RxReusable.swift */; };
-		0304683E1DEDC8DC00F61B90 /* UITableViewCell+RxReusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030468361DEDC8DC00F61B90 /* UITableViewCell+RxReusable.swift */; };
 		030468421DEDCB7D00F61B90 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 030468401DEDCB7D00F61B90 /* RxCocoa.framework */; };
 		030468431DEDCB7D00F61B90 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 030468411DEDCB7D00F61B90 /* RxSwift.framework */; };
 		0352CE6B1DEEC32A00066B0B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0352CE691DEEC32A00066B0B /* ViewController.swift */; };
@@ -22,8 +15,15 @@
 		0352CE701DEEC3B000066B0B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0352CE5A1DEEC27B00066B0B /* Assets.xcassets */; };
 		0352CE711DEEC3B100066B0B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0352CE5B1DEEC27B00066B0B /* LaunchScreen.storyboard */; };
 		0352CE731DEEC42700066B0B /* TimerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0352CE721DEEC42700066B0B /* TimerCell.swift */; };
-		0352CE771DEEF55500066B0B /* Observable+RxReusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0352CE761DEEF55500066B0B /* Observable+RxReusable.swift */; };
-		0352CE791DEEF82E00066B0B /* Driver+RxReusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0352CE781DEEF82E00066B0B /* Driver+RxReusable.swift */; };
+		0365BBCB1E75A73D009BA3F8 /* Driver+RxReusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0365BBC01E75A73D009BA3F8 /* Driver+RxReusable.swift */; };
+		0365BBCC1E75A73D009BA3F8 /* NSObject+RxReusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0365BBC11E75A73D009BA3F8 /* NSObject+RxReusable.swift */; };
+		0365BBCD1E75A73D009BA3F8 /* Observable+RxReusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0365BBC21E75A73D009BA3F8 /* Observable+RxReusable.swift */; };
+		0365BBCE1E75A73D009BA3F8 /* RxReusable.h in Headers */ = {isa = PBXBuildFile; fileRef = 0365BBC31E75A73D009BA3F8 /* RxReusable.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0365BBCF1E75A73D009BA3F8 /* RxReusableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0365BBC41E75A73D009BA3F8 /* RxReusableType.swift */; };
+		0365BBD01E75A73D009BA3F8 /* UICollectionView+RxReusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0365BBC51E75A73D009BA3F8 /* UICollectionView+RxReusable.swift */; };
+		0365BBD11E75A73D009BA3F8 /* UICollectionViewCell+RxReusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0365BBC61E75A73D009BA3F8 /* UICollectionViewCell+RxReusable.swift */; };
+		0365BBD21E75A73D009BA3F8 /* UITableView+RxReusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0365BBC71E75A73D009BA3F8 /* UITableView+RxReusable.swift */; };
+		0365BBD31E75A73D009BA3F8 /* UITableViewCell+RxReusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0365BBC81E75A73D009BA3F8 /* UITableViewCell+RxReusable.swift */; };
 		994FF7BDB3BE4E72A7C8009B /* Pods_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CBD27869BEB94E35BC32C04 /* Pods_Example.framework */; };
 /* End PBXBuildFile section */
 
@@ -39,14 +39,6 @@
 
 /* Begin PBXFileReference section */
 		0304681E1DED82E000F61B90 /* RxReusable.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxReusable.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		0304682A1DEDC8C200F61B90 /* RxReusable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RxReusable.h; sourceTree = "<group>"; };
-		0304682C1DEDC8C200F61B90 /* Info-iOS.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-iOS.plist"; sourceTree = "<group>"; };
-		030468301DEDC8DC00F61B90 /* NSObject+RxReusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+RxReusable.swift"; sourceTree = "<group>"; };
-		030468311DEDC8DC00F61B90 /* RxReusableType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxReusableType.swift; sourceTree = "<group>"; };
-		030468331DEDC8DC00F61B90 /* UICollectionView+RxReusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+RxReusable.swift"; sourceTree = "<group>"; };
-		030468341DEDC8DC00F61B90 /* UICollectionViewCell+RxReusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCell+RxReusable.swift"; sourceTree = "<group>"; };
-		030468351DEDC8DC00F61B90 /* UITableView+RxReusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+RxReusable.swift"; sourceTree = "<group>"; };
-		030468361DEDC8DC00F61B90 /* UITableViewCell+RxReusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+RxReusable.swift"; sourceTree = "<group>"; };
 		030468401DEDCB7D00F61B90 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
 		030468411DEDCB7D00F61B90 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		0352CE461DEEC25200066B0B /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -56,8 +48,16 @@
 		0352CE611DEEC27B00066B0B /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0352CE691DEEC32A00066B0B /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		0352CE721DEEC42700066B0B /* TimerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerCell.swift; sourceTree = "<group>"; };
-		0352CE761DEEF55500066B0B /* Observable+RxReusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Observable+RxReusable.swift"; sourceTree = "<group>"; };
-		0352CE781DEEF82E00066B0B /* Driver+RxReusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Driver+RxReusable.swift"; sourceTree = "<group>"; };
+		0365BBC01E75A73D009BA3F8 /* Driver+RxReusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Driver+RxReusable.swift"; sourceTree = "<group>"; };
+		0365BBC11E75A73D009BA3F8 /* NSObject+RxReusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+RxReusable.swift"; sourceTree = "<group>"; };
+		0365BBC21E75A73D009BA3F8 /* Observable+RxReusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Observable+RxReusable.swift"; sourceTree = "<group>"; };
+		0365BBC31E75A73D009BA3F8 /* RxReusable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RxReusable.h; sourceTree = "<group>"; };
+		0365BBC41E75A73D009BA3F8 /* RxReusableType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxReusableType.swift; sourceTree = "<group>"; };
+		0365BBC51E75A73D009BA3F8 /* UICollectionView+RxReusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+RxReusable.swift"; sourceTree = "<group>"; };
+		0365BBC61E75A73D009BA3F8 /* UICollectionViewCell+RxReusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCell+RxReusable.swift"; sourceTree = "<group>"; };
+		0365BBC71E75A73D009BA3F8 /* UITableView+RxReusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+RxReusable.swift"; sourceTree = "<group>"; };
+		0365BBC81E75A73D009BA3F8 /* UITableViewCell+RxReusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+RxReusable.swift"; sourceTree = "<group>"; };
+		0365BBCA1E75A73D009BA3F8 /* Info-iOS.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-iOS.plist"; sourceTree = "<group>"; };
 		0519B97FD96804F9DB2EF98E /* Pods-Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-Example/Pods-Example.release.xcconfig"; sourceTree = "<group>"; };
 		8CBD27869BEB94E35BC32C04 /* Pods_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AEEAAB7BFA8BFED8E19F696 /* Pods-Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Example/Pods-Example.debug.xcconfig"; sourceTree = "<group>"; };
@@ -103,31 +103,6 @@
 				0352CE461DEEC25200066B0B /* Example.app */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		030468291DEDC8C200F61B90 /* Sources */ = {
-			isa = PBXGroup;
-			children = (
-				0304682A1DEDC8C200F61B90 /* RxReusable.h */,
-				030468311DEDC8DC00F61B90 /* RxReusableType.swift */,
-				030468301DEDC8DC00F61B90 /* NSObject+RxReusable.swift */,
-				030468331DEDC8DC00F61B90 /* UICollectionView+RxReusable.swift */,
-				030468341DEDC8DC00F61B90 /* UICollectionViewCell+RxReusable.swift */,
-				030468351DEDC8DC00F61B90 /* UITableView+RxReusable.swift */,
-				030468361DEDC8DC00F61B90 /* UITableViewCell+RxReusable.swift */,
-				0352CE761DEEF55500066B0B /* Observable+RxReusable.swift */,
-				0352CE781DEEF82E00066B0B /* Driver+RxReusable.swift */,
-			);
-			name = Sources;
-			sourceTree = "<group>";
-		};
-		0304682B1DEDC8C200F61B90 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				0304682C1DEDC8C200F61B90 /* Info-iOS.plist */,
-			);
-			name = "Supporting Files";
-			path = "../Supporting Files";
 			sourceTree = "<group>";
 		};
 		0304683F1DEDCB7D00F61B90 /* Frameworks */ = {
@@ -180,8 +155,8 @@
 		0352CE671DEEC28200066B0B /* RxReusable */ = {
 			isa = PBXGroup;
 			children = (
-				030468291DEDC8C200F61B90 /* Sources */,
-				0304682B1DEDC8C200F61B90 /* Supporting Files */,
+				0365BBBF1E75A73D009BA3F8 /* Sources */,
+				0365BBC91E75A73D009BA3F8 /* Supporting Files */,
 			);
 			name = RxReusable;
 			path = Sources;
@@ -203,6 +178,32 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		0365BBBF1E75A73D009BA3F8 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				0365BBC01E75A73D009BA3F8 /* Driver+RxReusable.swift */,
+				0365BBC11E75A73D009BA3F8 /* NSObject+RxReusable.swift */,
+				0365BBC21E75A73D009BA3F8 /* Observable+RxReusable.swift */,
+				0365BBC31E75A73D009BA3F8 /* RxReusable.h */,
+				0365BBC41E75A73D009BA3F8 /* RxReusableType.swift */,
+				0365BBC51E75A73D009BA3F8 /* UICollectionView+RxReusable.swift */,
+				0365BBC61E75A73D009BA3F8 /* UICollectionViewCell+RxReusable.swift */,
+				0365BBC71E75A73D009BA3F8 /* UITableView+RxReusable.swift */,
+				0365BBC81E75A73D009BA3F8 /* UITableViewCell+RxReusable.swift */,
+			);
+			name = Sources;
+			path = RxReusable/Sources;
+			sourceTree = SOURCE_ROOT;
+		};
+		0365BBC91E75A73D009BA3F8 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0365BBCA1E75A73D009BA3F8 /* Info-iOS.plist */,
+			);
+			name = "Supporting Files";
+			path = "RxReusable/Supporting Files";
+			sourceTree = SOURCE_ROOT;
+		};
 		1AD45FB38B7D6D8548361591 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -219,7 +220,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0304682D1DEDC8C200F61B90 /* RxReusable.h in Headers */,
+				0365BBCE1E75A73D009BA3F8 /* RxReusable.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,7 +273,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0810;
-				LastUpgradeCheck = 0810;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Suyeol Jeon";
 				TargetAttributes = {
 					0304681D1DED82E000F61B90 = {
@@ -377,14 +378,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0304683D1DEDC8DC00F61B90 /* UITableView+RxReusable.swift in Sources */,
-				030468381DEDC8DC00F61B90 /* NSObject+RxReusable.swift in Sources */,
-				0352CE771DEEF55500066B0B /* Observable+RxReusable.swift in Sources */,
-				0352CE791DEEF82E00066B0B /* Driver+RxReusable.swift in Sources */,
-				0304683B1DEDC8DC00F61B90 /* UICollectionView+RxReusable.swift in Sources */,
-				0304683E1DEDC8DC00F61B90 /* UITableViewCell+RxReusable.swift in Sources */,
-				030468391DEDC8DC00F61B90 /* RxReusableType.swift in Sources */,
-				0304683C1DEDC8DC00F61B90 /* UICollectionViewCell+RxReusable.swift in Sources */,
+				0365BBD31E75A73D009BA3F8 /* UITableViewCell+RxReusable.swift in Sources */,
+				0365BBCC1E75A73D009BA3F8 /* NSObject+RxReusable.swift in Sources */,
+				0365BBD21E75A73D009BA3F8 /* UITableView+RxReusable.swift in Sources */,
+				0365BBCB1E75A73D009BA3F8 /* Driver+RxReusable.swift in Sources */,
+				0365BBD01E75A73D009BA3F8 /* UICollectionView+RxReusable.swift in Sources */,
+				0365BBCF1E75A73D009BA3F8 /* RxReusableType.swift in Sources */,
+				0365BBCD1E75A73D009BA3F8 /* Observable+RxReusable.swift in Sources */,
+				0365BBD11E75A73D009BA3F8 /* UICollectionViewCell+RxReusable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -438,6 +439,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -491,6 +493,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -532,7 +535,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = "$(SRCROOT)/Supporting Files/Info-iOS.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/RxReusable/Supporting Files/Info-iOS.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = kr.xoul.RxReusable;
@@ -556,7 +559,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = "$(SRCROOT)/Supporting Files/Info-iOS.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/RxReusable/Supporting Files/Info-iOS.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = kr.xoul.RxReusable;
@@ -570,6 +573,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9AEEAAB7BFA8BFED8E19F696 /* Pods-Example.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "$(SRCROOT)/Example/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -584,6 +588,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0519B97FD96804F9DB2EF98E /* Pods-Example.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "$(SRCROOT)/Example/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
