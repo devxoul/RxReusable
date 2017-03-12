@@ -13,7 +13,7 @@ private var disposeBagKey: String = "disposeBag"
 private var willDisplaySubjectKey = "willDisplaySubject"
 private var didEndDisplayingSubjectKey = "didEndDisplayingSubject"
 
-public protocol RxReusableType: class, ReactiveCompatible {
+public protocol RxReusableType: class {
   var disposeBag: DisposeBag { get }
 }
 
