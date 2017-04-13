@@ -27,12 +27,17 @@ extension RxReusableType where Self: UIView {
 
   /// A dispose bag which is disposed when the view or cell is preparing for being reused.
   public var disposeBag: DisposeBag {
-    if let disposeBag = self._disposeBag {
+    get {
+      if let disposeBag = self._disposeBag {
+        return disposeBag
+      }
+      let disposeBag = DisposeBag()
+      self._disposeBag = disposeBag
       return disposeBag
     }
-    let disposeBag = DisposeBag()
-    self._disposeBag = disposeBag
-    return disposeBag
+    set {
+      self._disposeBag = newValue
+    }
   }
 
   public func prepareForReuse() {
