@@ -1,9 +1,10 @@
 .DS_Store
-
+sourcekitten-output.json
+docs/
+/.build
+/Packages
+/*.xcodeproj
 **/xcuserdata
-*.pbxuser
-*.mode1v3
-
+**/xcshareddata
 Pods/
 Carthage/
-vendor/
