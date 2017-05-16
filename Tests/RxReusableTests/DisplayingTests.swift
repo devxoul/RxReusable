@@ -21,6 +21,7 @@ fileprivate final class TableViewDelegate: NSObject, UITableViewDelegate {}
 final class DisplayingTests: XCTestCase {
 
   var disposeBag: DisposeBag!
+  var window: UIWindow!
 
   var collectionView: UICollectionView!
   var collectionViewCell: UICollectionViewCell!
@@ -42,6 +43,11 @@ final class DisplayingTests: XCTestCase {
     self.tableView = UITableView(frame: .zero)
     self.tableView.rx.setDelegate(TableViewDelegate()).addDisposableTo(self.disposeBag)
     self.tableViewCell = UITableViewCell(style: .default, reuseIdentifier: "cell")
+
+    self.window = UIWindow(frame: UIScreen.main.bounds)
+    self.window.addSubview(self.collectionView)
+    self.window.addSubview(self.tableView)
+
   }
 
   override func tearDown() {

@@ -21,33 +21,37 @@ public typealias CollectionViewDidEndDisplayingCellEvent = (
   indexPath: IndexPath
 )
 
+private var didSubscribeKey = "didSubscribe"
+
 extension UICollectionView {
 
   open override static func initialize() {
     guard self === UICollectionView.self else { return }
     self._rxreusable_swizzle(
-      #selector(UICollectionView.init(frame:collectionViewLayout:)),
-      #selector(UICollectionView._rxreusable_init(frame:collectionViewLayout:))
+      #selector(UICollectionView.didMoveToWindow),
+      #selector(UICollectionView._rxreusable_didMoveToWindow)
     )
   }
 
-  func _rxreusable_init(frame: CGRect, collectionViewLayout: UICollectionViewLayout) -> UICollectionView {
-    let instance = self._rxreusable_init(frame: frame, collectionViewLayout: collectionViewLayout)
-    _ = instance.rx.willDisplayCell
-      .takeUntil(instance.rx.deallocated)
+  func _rxreusable_didMoveToWindow() {
+    self._rxreusable_didMoveToWindow()
+    guard self.associatedObject(for: &didSubscribeKey) as? Bool != true else { return }
+    self.setAssociatedObject(true, for: &didSubscribeKey)
+
+    _ = self.rx.willDisplayCell
+      .takeUntil(self.rx.deallocated)
       .subscribe(onNext: { cell, indexPath in
         cell.traverseSubviews { view in
           (view as? UICollectionViewCell)?.rx.willDisplaySubject.onNext(indexPath)
         }
       })
-    _ = instance.rx.didEndDisplayingCell
-      .takeUntil(instance.rx.deallocated)
+    _ = self.rx.didEndDisplayingCell
+      .takeUntil(self.rx.deallocated)
       .subscribe(onNext: { cell, indexPath in
         cell.traverseSubviews { view in
           (view as? UICollectionViewCell)?.rx.didEndDisplayingSubject.onNext(indexPath)
         }
       })
-    return instance
   }
 
 }
