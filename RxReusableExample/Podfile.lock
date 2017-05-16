@@ -1,0 +1,31 @@
+PODS:
+  - ReusableKit (1.1.0)
+  - RxCocoa (3.4.1):
+    - RxSwift (~> 3.4)
+  - RxReusable (0.3.1):
+    - RxCocoa (>= 3.0)
+    - RxSwift (>= 3.0)
+  - RxSwift (3.4.1)
+  - Then (2.1.0)
+
+DEPENDENCIES:
+  - ReusableKit
+  - RxCocoa
+  - RxReusable (from `../`)
+  - RxSwift
+  - Then
+
+EXTERNAL SOURCES:
+  RxReusable:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  ReusableKit: 89e743a120bab0d95848bff27e481833c2768905
+  RxCocoa: a8a5f1d061d0043e28f56976829f31ce63e8eb09
+  RxReusable: f6bb5d9f321ba1e432e3f25b13e2a6777b37dde0
+  RxSwift: 656f8fbeca5bc372121a72d9ebdd3cd3bc0ffade
+  Then: 8496793c8fcac95482b943909b440724c7d8d82c
+
+PODFILE CHECKSUM: c4b392d28f62c96ab861d79285a6a1f7e3e2e527
+
+COCOAPODS: 1.2.1

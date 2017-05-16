@@ -1,0 +1,11 @@
+platform :ios, '9.0'
+
+target 'RxReusableExample' do
+  use_frameworks!
+
+  pod 'RxSwift'
+  pod 'RxCocoa'
+  pod 'RxReusable', :path => '../'
+  pod 'Then'
+  pod 'ReusableKit'
+end
