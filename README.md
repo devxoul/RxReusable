@@ -1,7 +1,7 @@
 RxReusable
 ==========
 
-![Swift](https://img.shields.io/badge/Swift-3.0-orange.svg)
+![Swift](https://img.shields.io/badge/Swift-4.2-orange.svg)
 [![CocoaPods](http://img.shields.io/cocoapods/v/RxReusable.svg)](https://cocoapods.org/pods/RxReusable)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
@@ -57,12 +57,12 @@ RxReusable provides some APIs for managing life cycle of reusable cells and view
 
 ## Dependencies
 
-- [RxSwift](https://github.com/ReactiveX/RxSwift) (>= 3.0)
-- [RxCocoa](https://github.com/ReactiveX/RxSwift) (>= 3.0)
+- [RxSwift](https://github.com/ReactiveX/RxSwift) (>= 4.0)
+- [RxCocoa](https://github.com/ReactiveX/RxSwift) (>= 4.0)
 
 ## Requirements
 
-- Swift 3
+- Swift 4.2
 - iOS 8+
 
 ## Installation

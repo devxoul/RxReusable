@@ -1,11 +1,18 @@
-// swift-tools-version:3.1
+// swift-tools-version:4.2
 
 import PackageDescription
 
 let package = Package(
   name: "RxReusable",
+  products: [
+    .library(name: "RxReusable", targets: ["RxReusable"]),
+  ],
   dependencies: [
-    .Package(url: "https://github.com/devxoul/RxSwift.git", majorVersion: 3),
-    .Package(url: "https://github.com/devxoul/RxExpect.git", majorVersion: 0),
+    .package(url: "https://github.com/ReactiveX/RxSwift.git", .upToNextMajor(from: "4.0.0")),
+    .package(url: "https://github.com/devxoul/RxExpect.git", .upToNextMajor(from: "1.0.0")),
+  ],
+  targets: [
+    .target(name: "RxReusable", dependencies: ["RxSwift", "RxCocoa"]),
+    .testTarget(name: "RxReusableTests", dependencies: ["RxReusable", "RxExpect"]),
   ]
 )

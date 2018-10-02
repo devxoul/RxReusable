@@ -11,12 +11,12 @@ Pod::Spec.new do |s|
   s.frameworks       = 'UIKit', 'Foundation'
   s.requires_arc     = true
 
-  s.dependency 'RxSwift', '>= 3.0'
-  s.dependency 'RxCocoa', '>= 3.0'
+  s.dependency 'RxSwift', '>= 4.0'
+  s.dependency 'RxCocoa', '>= 4.0'
 
   s.ios.deployment_target = '8.0'
 
   s.pod_target_xcconfig = {
-    'SWIFT_VERSION' => '3.0'
+    'SWIFT_VERSION' => '4.2'
   }
 end
