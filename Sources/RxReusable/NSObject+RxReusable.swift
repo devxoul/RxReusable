@@ -10,8 +10,8 @@ import Foundation
 
 extension NSObject {
   static func _rxreusable_swizzle(_ originalSelector: Selector, _ swizzledSelector: Selector) {
-    let originalMethod = class_getInstanceMethod(self, originalSelector)
-    let swizzledMethod = class_getInstanceMethod(self, swizzledSelector)
+    guard let originalMethod = class_getInstanceMethod(self, originalSelector) else { return }
+    guard let swizzledMethod = class_getInstanceMethod(self, swizzledSelector) else { return }
     let originalType = method_getTypeEncoding(originalMethod)
     let swizzledType = method_getTypeEncoding(swizzledMethod)
     let didAdd = class_addMethod(self, originalSelector, swizzledMethod, swizzledType)
@@ -24,11 +24,11 @@ extension NSObject {
 }
 
 extension NSObject {
-  func associatedObject(for key: UnsafeRawPointer) -> Any? {
+  func associatedObject(forKey key: UnsafeRawPointer) -> Any? {
     return objc_getAssociatedObject(self, key)
   }
 
-  func setAssociatedObject(_ object: Any?, for key: UnsafeRawPointer) {
+  func setAssociatedObject(_ object: Any?, forKey key: UnsafeRawPointer) {
     objc_setAssociatedObject(self, key, object, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
   }
 }

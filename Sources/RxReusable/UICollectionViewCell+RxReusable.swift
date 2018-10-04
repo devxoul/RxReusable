@@ -14,15 +14,19 @@ import RxSwift
 #if os(iOS)
 extension UICollectionViewCell: RxReusableType {
 
-  open override static func initialize() {
+  public static let initializer: Void = {
+    swizzle()
+  }()
+
+  static func swizzle() {
     guard self === UICollectionViewCell.self else { return }
-    self._rxreusable_swizzle(
+    UICollectionViewCell._rxreusable_swizzle(
       #selector(UICollectionViewCell.prepareForReuse),
       #selector(UICollectionViewCell._rxreusable_prepareForReuse)
     )
   }
 
-  func _rxreusable_prepareForReuse() {
+  @objc func _rxreusable_prepareForReuse() {
     self._rxreusable_prepareForReuse()
     self.dispose()
   }

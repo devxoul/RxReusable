@@ -23,8 +23,8 @@ public protocol RxReusableType: class {
 
 extension RxReusableType where Self: UIView {
   private var _disposeBag: DisposeBag? {
-    get { return self.associatedObject(for: &disposeBagKey) as? DisposeBag }
-    set { self.setAssociatedObject(newValue, for: &disposeBagKey) }
+    get { return self.associatedObject(forKey: &disposeBagKey) as? DisposeBag }
+    set { self.setAssociatedObject(newValue, forKey: &disposeBagKey) }
   }
 
   /// A dispose bag which is disposed when the view or cell is preparing for being reused.
@@ -64,20 +64,20 @@ extension RxReusableType where Self: UIView {
 
 extension Reactive where Base: RxReusableType, Base: UIView {
   internal var willDisplaySubject: PublishSubject<IndexPath> {
-    if let subject = self.base.associatedObject(for: &willDisplaySubjectKey) as? PublishSubject<IndexPath> {
+    if let subject = self.base.associatedObject(forKey: &willDisplaySubjectKey) as? PublishSubject<IndexPath> {
       return subject
     }
     let subject = PublishSubject<IndexPath>()
-    self.base.setAssociatedObject(subject, for: &willDisplaySubjectKey)
+    self.base.setAssociatedObject(subject, forKey: &willDisplaySubjectKey)
     return subject
   }
 
   internal var didEndDisplayingSubject: PublishSubject<IndexPath> {
-    if let subject = self.base.associatedObject(for: &didEndDisplayingSubjectKey) as? PublishSubject<IndexPath> {
+    if let subject = self.base.associatedObject(forKey: &didEndDisplayingSubjectKey) as? PublishSubject<IndexPath> {
       return subject
     }
     let subject = PublishSubject<IndexPath>()
-    self.base.setAssociatedObject(subject, for: &didEndDisplayingSubjectKey)
+    self.base.setAssociatedObject(subject, forKey: &didEndDisplayingSubjectKey)
     return subject
   }
 

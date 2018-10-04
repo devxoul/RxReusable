@@ -32,15 +32,19 @@ final class DisplayingTests: XCTestCase {
     super.setUp()
     self.disposeBag = DisposeBag()
 
+    UICollectionViewCell.initializer
+    UICollectionView.initializer
     self.collectionView = UICollectionView(
       frame: .zero,
       collectionViewLayout: UICollectionViewFlowLayout()
     )
-    self.collectionView.rx.setDelegate(CollectionViewDelegate()).addDisposableTo(self.disposeBag)
+    self.collectionView.rx.setDelegate(CollectionViewDelegate()).disposed(by: self.disposeBag)
     self.collectionViewCell = UICollectionViewCell(frame: .zero)
 
+    UITableViewCell.initializer
+    UITableView.initializer
     self.tableView = UITableView(frame: .zero)
-    self.tableView.rx.setDelegate(TableViewDelegate()).addDisposableTo(self.disposeBag)
+    self.tableView.rx.setDelegate(TableViewDelegate()).disposed(by: self.disposeBag)
     self.tableViewCell = UITableViewCell(style: .default, reuseIdentifier: "cell")
   }
 
@@ -50,70 +54,62 @@ final class DisplayingTests: XCTestCase {
   }
 
   func testIsDisplaying_collectionViewCell() {
-    RxExpect { test in
-      self.invokeCollectionViewWillDisplay(test, 100)
-      self.invokeCollectionViewDidEndDisplaying(test, 200)
-      test
-        .assert(self.collectionViewCell.rx.isDisplaying.asObservable())
-        .filterNext()
-        .equal([false, true, false])
+    let test = RxExpect()
+    self.invokeCollectionViewWillDisplay(test, 100)
+    self.invokeCollectionViewDidEndDisplaying(test, 200)
+    test.assert(self.collectionViewCell.rx.isDisplaying) {
+      XCTAssertEqual($0.elements, [false, true, false])
     }
   }
 
   func testIsDisplaying_collectionViewCell_subcell() {
-    RxExpect { test in
-      let subcell = UICollectionViewCell(frame: .zero)
-      self.collectionViewCell.addSubview(subcell)
-      self.invokeCollectionViewWillDisplay(test, 100)
-      self.invokeCollectionViewDidEndDisplaying(test, 200)
-      test
-        .assert(subcell.rx.isDisplaying.asObservable())
-        .filterNext()
-        .equal([false, true, false])
+    let test = RxExpect()
+    let subcell = UICollectionViewCell(frame: .zero)
+    self.collectionViewCell.addSubview(subcell)
+    self.invokeCollectionViewWillDisplay(test, 100)
+    self.invokeCollectionViewDidEndDisplaying(test, 200)
+    test.assert(subcell.rx.isDisplaying) {
+      XCTAssertEqual($0.elements, [false, true, false])
     }
   }
 
   func testWhileDisplaying_collectionViewCell() {
-    RxExpect { test in
-      let subject = PublishSubject<String>()
-      let source = subject.whileDisplaying(self.collectionViewCell)
-      test.input(subject, [
-        next(100, "A"),
-        next(200, "B"),
-        next(300, "C"),
-        next(400, "D"),
-        next(500, "E"),
-        next(600, "F"),
+    let test = RxExpect()
+    let subject = PublishSubject<String>()
+    let source = subject.whileDisplaying(self.collectionViewCell)
+    test.input(subject, [
+      next(100, "A"),
+      next(200, "B"),
+      next(300, "C"),
+      next(400, "D"),
+      next(500, "E"),
+      next(600, "F"),
       ])
-      self.invokeCollectionViewWillDisplay(test, 250)
-      self.invokeCollectionViewDidEndDisplaying(test, 450)
-      test
-        .assert(source)
-        .filterNext()
-        .equal(["C", "D"])
+    self.invokeCollectionViewWillDisplay(test, 250)
+    self.invokeCollectionViewDidEndDisplaying(test, 450)
+    test.assert(source) {
+      XCTAssertEqual($0.elements, ["C", "D"])
     }
   }
 
   func testWhileDisplaying_collectionViewCell_subcell() {
-    RxExpect { test in
-      let subcell = UICollectionViewCell(frame: .zero)
-      self.collectionViewCell.addSubview(subcell)
-      let subject = PublishSubject<String>()
-      let source = subject.whileDisplaying(subcell)
-      test.input(subject, [
-        next(100, "A"),
-        next(200, "B"),
-        next(300, "C"),
-        next(400, "D"),
-        next(500, "E"),
-        next(600, "F"),
+    let test = RxExpect()
+    let subcell = UICollectionViewCell(frame: .zero)
+    self.collectionViewCell.addSubview(subcell)
+    let subject = PublishSubject<String>()
+    let source = subject.whileDisplaying(subcell)
+    test.input(subject, [
+      next(100, "A"),
+      next(200, "B"),
+      next(300, "C"),
+      next(400, "D"),
+      next(500, "E"),
+      next(600, "F"),
       ])
-      self.invokeCollectionViewWillDisplay(test, 250)
-      self.invokeCollectionViewDidEndDisplaying(test, 450)
-      test
-        .assert(source)
-        .filterNext()
-        .equal(["C", "D"])
+    self.invokeCollectionViewWillDisplay(test, 250)
+    self.invokeCollectionViewDidEndDisplaying(test, 450)
+    test.assert(source) {
+      XCTAssertEqual($0.elements, ["C", "D"])
     }
   }
 
@@ -121,77 +117,69 @@ final class DisplayingTests: XCTestCase {
   // MARK: TableView
 
   func testIsDisplaying_tableViewCell() {
-    RxExpect { test in
-      self.invokeTableViewWillDisplay(test, 100)
-      self.invokeTableViewDidEndDisplaying(test, 200)
-      test
-        .assert(self.tableViewCell.rx.isDisplaying.asObservable())
-        .filterNext()
-        .equal([false, true, false])
+    let test = RxExpect()
+    self.invokeTableViewWillDisplay(test, 100)
+    self.invokeTableViewDidEndDisplaying(test, 200)
+    test.assert(self.tableViewCell.rx.isDisplaying) {
+      XCTAssertEqual($0.elements, [false, true, false])
     }
   }
 
   func testIsDisplaying_tableViewCell_subcell() {
     let subcell = UITableViewCell()
     self.tableViewCell.addSubview(subcell)
-    RxExpect { test in
-      self.invokeTableViewWillDisplay(test, 100)
-      self.invokeTableViewDidEndDisplaying(test, 200)
-      test
-        .assert(subcell.rx.isDisplaying.asObservable())
-        .filterNext()
-        .equal([false, true, false])
+    let test = RxExpect()
+    self.invokeTableViewWillDisplay(test, 100)
+    self.invokeTableViewDidEndDisplaying(test, 200)
+    test.assert(subcell.rx.isDisplaying) {
+      XCTAssertEqual($0.elements, [false, true, false])
     }
   }
 
   func testWhileDisplaying_tableViewCell() {
-    RxExpect { test in
-      let subject = PublishSubject<String>()
-      let source = subject.whileDisplaying(self.tableViewCell)
-      test.input(subject, [
-        next(100, "A"),
-        next(200, "B"),
-        next(300, "C"),
-        next(400, "D"),
-        next(500, "E"),
-        next(600, "F"),
+    let test = RxExpect()
+    let subject = PublishSubject<String>()
+    let source = subject.whileDisplaying(self.tableViewCell)
+    test.input(subject, [
+      next(100, "A"),
+      next(200, "B"),
+      next(300, "C"),
+      next(400, "D"),
+      next(500, "E"),
+      next(600, "F"),
       ])
-      self.invokeTableViewWillDisplay(test, 250)
-      self.invokeTableViewDidEndDisplaying(test, 450)
-      test
-        .assert(source)
-        .filterNext()
-        .equal(["C", "D"])
+    self.invokeTableViewWillDisplay(test, 250)
+    self.invokeTableViewDidEndDisplaying(test, 450)
+    test.assert(source) {
+      XCTAssertEqual($0.elements, ["C", "D"])
     }
   }
 
   func testWhileDisplaying_tableViewCell_subcell() {
     let subcell = UITableViewCell()
     self.tableViewCell.addSubview(subcell)
-    RxExpect { test in
-      let subject = PublishSubject<String>()
-      let source = subject.whileDisplaying(subcell)
-      test.input(subject, [
-        next(100, "A"),
-        next(200, "B"),
-        next(300, "C"),
-        next(400, "D"),
-        next(500, "E"),
-        next(600, "F"),
+    let test = RxExpect()
+    let subject = PublishSubject<String>()
+    let source = subject.whileDisplaying(subcell)
+    test.input(subject, [
+      next(100, "A"),
+      next(200, "B"),
+      next(300, "C"),
+      next(400, "D"),
+      next(500, "E"),
+      next(600, "F"),
       ])
-      self.invokeTableViewWillDisplay(test, 250)
-      self.invokeTableViewDidEndDisplaying(test, 450)
-      test
-        .assert(source)
-        .filterNext()
-        .equal(["C", "D"])
+    self.invokeTableViewWillDisplay(test, 250)
+    self.invokeTableViewDidEndDisplaying(test, 450)
+    test.assert(source) {
+      XCTAssertEqual($0.elements, ["C", "D"])
     }
   }
 
 
   // MARK: UICollectionView Utils
 
-  private func invokeCollectionViewWillDisplay(_ test: RxExpectation, _ time: TestTime) {
+  private func invokeCollectionViewWillDisplay(_ test: RxExpect, _ time: TestTime) {
     let subject = PublishSubject<Void>()
     subject
       .subscribe(onNext: {
@@ -203,11 +191,11 @@ final class DisplayingTests: XCTestCase {
           forItemAt: indexPath
         )
       })
-      .addDisposableTo(self.disposeBag)
+      .disposed(by: self.disposeBag)
     test.input(subject, [next(time, Void())])
   }
 
-  private func invokeCollectionViewDidEndDisplaying(_ test: RxExpectation, _ time: TestTime) {
+  private func invokeCollectionViewDidEndDisplaying(_ test: RxExpect, _ time: TestTime) {
     let subject = PublishSubject<Void>()
     subject
       .subscribe(onNext: {
@@ -219,14 +207,14 @@ final class DisplayingTests: XCTestCase {
           forItemAt: indexPath
         )
       })
-      .addDisposableTo(self.disposeBag)
+      .disposed(by: self.disposeBag)
     test.input(subject, [next(time, Void())])
   }
 
 
   // MARK: UITableView Utils
 
-  private func invokeTableViewWillDisplay(_ test: RxExpectation, _ time: TestTime) {
+  private func invokeTableViewWillDisplay(_ test: RxExpect, _ time: TestTime) {
     let subject = PublishSubject<Void>()
     subject
       .subscribe(onNext: {
@@ -238,11 +226,11 @@ final class DisplayingTests: XCTestCase {
           forRowAt: indexPath
         )
       })
-      .addDisposableTo(self.disposeBag)
+      .disposed(by: self.disposeBag)
     test.input(subject, [next(time, Void())])
   }
 
-  private func invokeTableViewDidEndDisplaying(_ test: RxExpectation, _ time: TestTime) {
+  private func invokeTableViewDidEndDisplaying(_ test: RxExpect, _ time: TestTime) {
     let subject = PublishSubject<Void>()
     subject
       .subscribe(onNext: {
@@ -254,7 +242,7 @@ final class DisplayingTests: XCTestCase {
           forRowAt: indexPath
         )
       })
-      .addDisposableTo(self.disposeBag)
+      .disposed(by: self.disposeBag)
     test.input(subject, [next(time, Void())])
   }
 

@@ -14,15 +14,19 @@ import RxSwift
 #if os(iOS)
 extension UITableViewCell: RxReusableType {
 
-  open override static func initialize() {
+  public static let initializer: Void = {
+    swizzle()
+  }()
+
+  static func swizzle() {
     guard self === UITableViewCell.self else { return }
-    self._rxreusable_swizzle(
+    UITableViewCell._rxreusable_swizzle(
       #selector(UITableViewCell.prepareForReuse),
       #selector(UITableViewCell._rxreusable_prepareForReuse)
     )
   }
 
-  func _rxreusable_prepareForReuse() {
+  @objc func _rxreusable_prepareForReuse() {
     self._rxreusable_prepareForReuse()
     self.dispose()
   }

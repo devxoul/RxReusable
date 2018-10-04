@@ -1,12 +1,14 @@
 PODS:
-  - ReusableKit (1.1.0)
-  - RxCocoa (3.4.1):
-    - RxSwift (~> 3.4)
+  - ReusableKit (2.0.1):
+    - ReusableKit/Core (= 2.0.1)
+  - ReusableKit/Core (2.0.1)
+  - RxCocoa (4.3.1):
+    - RxSwift (~> 4.0)
   - RxReusable (0.3.1):
-    - RxCocoa (>= 3.0)
-    - RxSwift (>= 3.0)
-  - RxSwift (3.4.1)
-  - Then (2.1.0)
+    - RxCocoa (>= 4.0)
+    - RxSwift (>= 4.0)
+  - RxSwift (4.3.1)
+  - Then (2.4.0)
 
 DEPENDENCIES:
   - ReusableKit
@@ -15,17 +17,24 @@ DEPENDENCIES:
   - RxSwift
   - Then
 
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - ReusableKit
+    - RxCocoa
+    - RxSwift
+    - Then
+
 EXTERNAL SOURCES:
   RxReusable:
     :path: "../"
 
 SPEC CHECKSUMS:
-  ReusableKit: 89e743a120bab0d95848bff27e481833c2768905
-  RxCocoa: a8a5f1d061d0043e28f56976829f31ce63e8eb09
-  RxReusable: f6bb5d9f321ba1e432e3f25b13e2a6777b37dde0
-  RxSwift: 656f8fbeca5bc372121a72d9ebdd3cd3bc0ffade
-  Then: 8496793c8fcac95482b943909b440724c7d8d82c
+  ReusableKit: 11b5bde14553a35bcf3979412dbfd1e690392f14
+  RxCocoa: 78763c7b07d02455598d9fc3c1ad091a28b73635
+  RxReusable: d68b5d61c20ade5f3ded7bdadd2a527d5474d612
+  RxSwift: fe0fd770a43acdb7d0a53da411c9b892e69bb6e4
+  Then: 71866660c7af35a7343831f7668e7cd2b62ee0f2
 
 PODFILE CHECKSUM: c4b392d28f62c96ab861d79285a6a1f7e3e2e527
 
-COCOAPODS: 1.2.1
+COCOAPODS: 1.5.3
