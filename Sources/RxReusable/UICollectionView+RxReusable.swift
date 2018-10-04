@@ -23,11 +23,11 @@ public typealias CollectionViewDidEndDisplayingCellEvent = (
 
 extension UICollectionView {
 
-  static let initializer: Void = {
+  public static let initializer: Void = {
     swizzle()
   }()
 
-  private static func swizzle() {
+  static func swizzle() {
     guard self === UICollectionView.self else { return }
     UICollectionView._rxreusable_swizzle(
       #selector(UICollectionView.init(frame:collectionViewLayout:)),
@@ -35,7 +35,7 @@ extension UICollectionView {
     )
   }
 
-  @objc private func _rxreusable_init(frame: CGRect, collectionViewLayout: UICollectionViewLayout) -> UICollectionView {
+  @objc func _rxreusable_init(frame: CGRect, collectionViewLayout: UICollectionViewLayout) -> UICollectionView {
     let instance = self._rxreusable_init(frame: frame, collectionViewLayout: collectionViewLayout)
     _ = instance.rx.willDisplayCell
       .takeUntil(instance.rx.deallocated)
