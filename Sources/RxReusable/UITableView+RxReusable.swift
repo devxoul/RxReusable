@@ -13,15 +13,19 @@ import RxCocoa
 #if os(iOS)
 extension UITableView {
 
-  open override static func initialize() {
+  static let initializer: Void = {
+    swizzle()
+  }()
+
+  private static func swizzle() {
     guard self === UITableView.self else { return }
-    self._rxreusable_swizzle(
+    UITableView._rxreusable_swizzle(
       #selector(UITableView.init(frame:style:)),
       #selector(UITableView._rxreusable_init(frame:style:))
     )
   }
 
-  func _rxreusable_init(frame: CGRect, style: UITableViewStyle) -> UITableView {
+  @objc private func _rxreusable_init(frame: CGRect, style: UITableView.Style) -> UITableView {
     let instance = self._rxreusable_init(frame: frame, style: style)
     _ = instance.rx.willDisplayCell
       .takeUntil(instance.rx.deallocated)
