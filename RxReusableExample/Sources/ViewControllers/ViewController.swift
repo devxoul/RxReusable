@@ -44,8 +44,8 @@ final class ViewController: UIViewController {
     self.view.backgroundColor = .white
     self.tableView.layer.borderWidth = 1 / UIScreen.main.scale
     self.tableView.layer.borderColor = UIColor.gray.cgColor
-    self.tableView.rx.setDataSource(self).addDisposableTo(self.disposeBag)
-    self.tableView.rx.setDelegate(self).addDisposableTo(self.disposeBag)
+    self.tableView.rx.setDataSource(self).disposed(by: self.disposeBag)
+    self.tableView.rx.setDelegate(self).disposed(by: self.disposeBag)
     self.view.addSubview(self.tableView)
   }
 

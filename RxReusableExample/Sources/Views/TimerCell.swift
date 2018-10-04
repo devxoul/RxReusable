@@ -25,20 +25,20 @@ final class TimerCell: UITableViewCell {
         .subscribe(onNext: { isDisplaying in
           print("\(emoji) became \(isDisplaying ? "visible" : "invisible")")
         })
-        .addDisposableTo(self.disposeBag)
+        .disposed(by: self.disposeBag)
 
     if indexPath.row == 0 {
       textLabel.text = "I emit \(emoji) while visible"
       timer
         .whileDisplaying(self)
         .subscribe(onNext: { _ in print("\(emoji) I am currently visible") })
-        .addDisposableTo(self.disposeBag)
+        .disposed(by: self.disposeBag)
     } else {
       textLabel.text = "I emit \(emoji) while not visible"
       timer
         .whileDisplaying(self, false)
         .subscribe(onNext: { _ in print("\(emoji) I am currently not visible") })
-        .addDisposableTo(self.disposeBag)
+        .disposed(by: self.disposeBag)
     }
   }
 
